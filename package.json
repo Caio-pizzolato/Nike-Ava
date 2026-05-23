@@ -1,0 +1,11 @@
+{
+  "name": "nike-ava-landing",
+  "version": "1.0.0",
+  "description": "Nike Ava X Mesh — Landing page com Stripe Checkout",
+  "dependencies": {
+    "stripe": "^14.0.0"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}

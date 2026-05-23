@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Nike Ava X Mesh — Limitierte Edition. Ultraleicht, atmungsaktiv. Exklusiv bei SNKRS.">
+<title>Nike Ava X Mesh — Limitierte Edition | SNKRS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ─────────────────────────────────────── */
+:root{
+  --ink:#0a0a0a;--ink2:#1a1a1a;
+  --white:#ffffff;--off:#f5f5f3;--stone:#e2e0db;
+  --mist:#b8b5af;--slate:#6a6a6a;
+  --red:#cc0000;--red-h:#a30000;
+  --amber:#c97d00;--green:#1a7a1a;
+  --ease:.22s cubic-bezier(.4,0,.2,1);
+  --r-sm:8px;--r-md:14px;--r-lg:22px;--r-pill:50px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden;max-width:100%}
+body{overflow-x:hidden;max-width:100vw;font-family:'Archivo',sans-serif}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+a{text-decoration:none;color:inherit}
+
+/* ── FLASH BANNER ────────────────────────────────── */
+.nik-flash{
+  background:var(--ink);color:var(--white);
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:10px 12px;font-size:11px;font-weight:700;letter-spacing:.10em;
+  text-transform:uppercase;position:relative;overflow:hidden;
+  text-align:center;flex-wrap:wrap;line-height:1.5;
+}
+.nik-flash::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);
+  animation:nik-sheen 3.5s ease-in-out infinite;
+}
+@keyframes nik-sheen{0%,100%{transform:translateX(-100%)}50%{transform:translateX(100%)}}
+.nik-flash-dot{width:7px;height:7px;background:var(--red);border-radius:50%;animation:nik-pdot 1.2s ease-in-out infinite;flex-shrink:0}
+@keyframes nik-pdot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.6)}}
+#nik-banner-cd{color:#ffcc00;font-size:13px;font-weight:800}
+
+/* ── HEADER ──────────────────────────────────────── */
+.nik-header{
+  background:var(--white);border-bottom:1px solid var(--stone);
+  padding:0 24px;height:64px;display:flex;align-items:center;
+  justify-content:space-between;position:sticky;top:0;z-index:200;
+}
+.nik-logo{display:flex;align-items:center}
+.nik-logo svg{height:32px;width:auto;fill:#0a0a0a}
+.nik-hdr-right{display:flex;align-items:center;gap:12px}
+.nik-badge-ltd{
+  background:var(--red);color:var(--white);font-size:10px;font-weight:800;
+  letter-spacing:.08em;padding:5px 12px;border-radius:var(--r-pill);
+  animation:nik-bp 1.6s ease-in-out infinite;white-space:nowrap;
+}
+@keyframes nik-bp{0%,100%{transform:scale(1)}50%{transform:scale(.95)}}
+
+/* ── LAYOUT ──────────────────────────────────────── */
+.nik-wrap{display:grid;grid-template-columns:55% 45%;min-height:calc(100vh - 100px)}
+
+/* ── GALLERY ─────────────────────────────────────── */
+.nik-gallery{
+  background:var(--off);display:flex;flex-direction:column;
+  position:sticky;top:60px;height:calc(100vh - 60px);overflow:hidden;
+}
+.nik-main-wrap{flex:1;overflow:hidden;position:relative;cursor:zoom-in}
+.nik-main-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease);display:block}
+.nik-main-wrap:hover img{transform:scale(1.034)}
+.nik-ibadge-ex{
+  position:absolute;top:16px;left:16px;background:var(--ink);color:var(--white);
+  font-size:9px;font-weight:700;letter-spacing:.16em;padding:5px 12px;text-transform:uppercase;
+}
+.nik-ibadge-lim{
+  position:absolute;top:16px;right:16px;background:var(--red);color:var(--white);
+  font-size:9px;font-weight:800;letter-spacing:.1em;padding:5px 11px;
+  text-transform:uppercase;border-radius:var(--r-sm);
+}
+.nik-thumbs{display:flex;gap:8px;padding:10px 12px;overflow-x:auto;background:var(--white);border-top:1px solid var(--stone)}
+.nik-thumb{width:60px;height:60px;flex-shrink:0;overflow:hidden;border:2px solid transparent;border-radius:var(--r-sm);cursor:pointer;transition:border-color var(--ease)}
+.nik-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.nik-thumb.active{border-color:var(--ink)}
+.nik-thumb:hover:not(.active){border-color:var(--mist)}
+
+/* ── INFO PANEL ──────────────────────────────────── */
+.nik-info{padding:40px 40px 60px;display:flex;flex-direction:column;gap:22px;overflow-y:auto;border-left:1px solid var(--stone)}
+.nik-name{font-family:'Archivo Black',sans-serif;font-size:clamp(32px,5vw,50px);line-height:.96;letter-spacing:-.01em}
+.nik-cw{margin-top:6px;font-size:13px;font-weight:400;color:var(--slate);letter-spacing:.04em}
+.nik-divider{height:1px;background:var(--stone)}
+
+/* Social proof */
+.nik-social-proof{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:8px;font-size:12px}
+.nik-sp-stars{color:#f5a623;letter-spacing:1px;font-size:13px}
+.nik-sp-score{font-weight:700;color:var(--ink)}
+.nik-sp-sep{color:var(--mist)}
+.nik-sp-count,.nik-sp-sold{color:var(--slate);font-weight:500}
+
+/* Price */
+.nik-price-section{display:flex;flex-direction:column;gap:8px}
+.nik-price-row{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.nik-p-was{font-size:15px;font-weight:400;color:var(--mist);text-decoration:line-through}
+.nik-p-now{font-family:'Archivo Black',sans-serif;font-size:clamp(32px,5vw,42px);letter-spacing:-.01em}
+.nik-p-tag{background:var(--red);color:var(--white);font-size:11px;font-weight:800;letter-spacing:.05em;padding:4px 10px;border-radius:var(--r-sm)}
+.nik-p-saving{font-size:13px;font-weight:600;color:var(--green);display:flex;align-items:center;gap:5px}
+
+/* Urgency */
+.nik-urgency{border:1.5px solid var(--stone);border-radius:var(--r-md);overflow:hidden}
+.nik-urg-head{background:var(--ink);color:var(--white);padding:10px 18px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:7px}
+.nik-urg-body{padding:16px 18px 14px;display:flex;flex-direction:column;gap:12px}
+.nik-timer-row{display:flex;align-items:center;gap:8px}
+.nik-t-unit{background:var(--ink);color:var(--white);border-radius:var(--r-sm);width:52px;text-align:center;padding:8px 4px 5px}
+.nik-t-num{font-family:'Archivo Black',sans-serif;font-size:28px;line-height:1;display:block;letter-spacing:.02em}
+.nik-t-lbl{font-size:8px;letter-spacing:.12em;color:var(--mist);text-transform:uppercase}
+.nik-t-sep{font-family:'Archivo Black',sans-serif;font-size:24px;color:var(--red);padding-bottom:4px}
+.nik-stock-wrap{display:flex;flex-direction:column;gap:5px}
+.nik-stock-label{display:flex;justify-content:space-between;font-size:12px;font-weight:600}
+.nik-stock-label em{color:var(--red);font-style:normal;font-weight:700}
+.nik-stock-track{height:5px;background:var(--stone);border-radius:3px;overflow:hidden}
+.nik-stock-fill{height:100%;background:var(--red);border-radius:3px;width:82%;animation:nik-sfill 30s linear forwards}
+@keyframes nik-sfill{to{width:74%}}
+.nik-watchers{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:500;color:var(--slate)}
+.nik-live-dots{display:flex;gap:3px}
+.nik-live-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:nik-ldot 1.5s ease-in-out infinite}
+.nik-live-dot:nth-child(2){animation-delay:.3s}
+.nik-live-dot:nth-child(3){animation-delay:.6s}
+@keyframes nik-ldot{0%,100%{opacity:1}50%{opacity:.2}}
+
+/* Sizes */
+.nik-size-section{display:flex;flex-direction:column;gap:10px}
+.nik-size-head{display:flex;justify-content:space-between;align-items:center}
+.nik-size-title{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.nik-size-guide{font-size:12px;color:var(--slate);font-weight:500;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.nik-size-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}
+.nik-sz{
+  border:1.5px solid var(--stone);border-radius:var(--r-sm);padding:10px 4px;
+  text-align:center;font-size:13px;font-weight:600;color:var(--ink);
+  cursor:pointer;transition:all var(--ease);position:relative;background:var(--white);
+}
+.nik-sz:hover{border-color:var(--ink)}
+.nik-sz.active{border-color:var(--ink);background:var(--ink);color:var(--white)}
+.nik-sz.low::after{
+  content:'';position:absolute;top:-4px;right:-4px;
+  width:9px;height:9px;border-radius:50%;background:var(--amber);border:2px solid var(--white);
+}
+.nik-sz.out{opacity:.3;cursor:not-allowed;text-decoration:line-through;pointer-events:none}
+.nik-size-note{font-size:11px;color:var(--amber);font-weight:600}
+
+/* CTA */
+.nik-cta-stack{display:flex;flex-direction:column;gap:10px}
+.nik-btn-primary{
+  width:100%;padding:16px;border-radius:var(--r-pill);font-size:13px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--white);background:var(--ink);
+  transition:all var(--ease);position:relative;overflow:hidden;
+}
+.nik-btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 28px rgba(0,0,0,.18)}
+.nik-btn-primary.red{background:var(--red)}
+.nik-btn-primary.red:hover{background:var(--red-h)}
+.nik-btn-primary:disabled{opacity:.6;cursor:not-allowed;transform:none}
+
+/* Stripe loading state */
+.nik-btn-primary.loading::after{
+  content:'';display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,.3);
+  border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;margin-left:10px;vertical-align:middle;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Size error */
+.nik-size-error{
+  display:none;background:#fff3cd;border:1px solid #ffc107;border-radius:var(--r-sm);
+  padding:10px 14px;font-size:12px;font-weight:600;color:#856404;text-align:center;
+}
+.nik-size-error.show{display:block}
+
+/* Trust */
+.nik-trust-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--stone);border-radius:var(--r-md);overflow:hidden}
+.nik-trust-item{display:flex;flex-direction:column;align-items:center;gap:5px;padding:14px 6px;text-align:center;font-size:10px;font-weight:500;color:var(--slate);line-height:1.3;border-right:1px solid var(--stone)}
+.nik-trust-item:last-child{border-right:none}
+.nik-t-ico{font-size:18px}
+
+/* Payment */
+.nik-payment-mini{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;margin-top:-4px}
+.nik-pay-mini{min-width:42px;height:24px;padding:0 7px;border:1px solid var(--stone);border-radius:5px;background:var(--white);display:inline-flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;letter-spacing:.02em;color:var(--ink2)}
+.nik-pay-mini.paypal{color:#003087}
+.nik-pay-mini.klarna{color:#111;background:#f6eeee}
+.nik-pay-mini.visa{color:#1a1f71}
+.nik-microcopy{text-align:center;font-size:11px;line-height:1.45;color:var(--slate);margin-top:-2px}
+.nik-microcopy b{color:var(--ink)}
+
+/* Clean trust */
+.nik-clean-trust{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:-2px}
+.nik-clean-trust-item{background:var(--off);border:1px solid var(--stone);border-radius:var(--r-sm);padding:10px 8px;display:flex;align-items:center;gap:7px;font-size:11px;font-weight:700;color:var(--ink2);line-height:1.25}
+.nik-clean-trust-item span{font-size:15px;flex-shrink:0}
+.nik-legit-row{display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:11px;color:var(--slate);line-height:1.4}
+.nik-legit-pill{border:1px solid var(--stone);background:var(--white);border-radius:var(--r-pill);padding:6px 10px;font-weight:700;color:var(--ink2)}
+
+/* Cart timer */
+.nik-cart-timer{display:none;margin-top:8px;padding:10px 12px;border:1px solid rgba(204,0,0,.20);border-radius:var(--r-md);background:#fff8f8;text-align:center}
+.nik-cart-timer-label{display:block;margin-bottom:4px;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.nik-cart-timer-time{font-family:'Archivo Black',sans-serif;font-size:20px;letter-spacing:.06em;color:var(--ink)}
+.nik-cart-timer-note{display:block;margin-top:3px;font-size:11px;color:var(--slate)}
+
+/* Desc */
+.nik-desc-section{display:flex;flex-direction:column;gap:10px}
+.nik-desc-h{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.nik-desc-b{font-size:14px;line-height:1.75;color:#444}
+
+/* Footer */
+.nik-footer{background:var(--ink);color:#555;padding:28px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.nik-f-logo svg{width:36px;height:22px;fill:#333;display:block}
+.nik-f-text{font-size:11px;line-height:1.6}
+.nik-f-links{display:flex;gap:16px;font-size:11px;flex-wrap:wrap}
+.nik-f-links a{color:#555;transition:color var(--ease)}
+.nik-f-links a:hover{color:#888}
+
+/* Toast */
+.nik-toast{
+  position:fixed;bottom:20px;left:16px;right:16px;background:var(--white);
+  border-radius:var(--r-md);box-shadow:0 8px 40px rgba(0,0,0,.13);
+  padding:12px 16px;display:flex;align-items:center;gap:10px;font-size:13px;
+  z-index:999;max-width:340px;border-left:4px solid var(--ink);
+  animation:nik-tin .4s ease,nik-tout .4s ease 5s forwards;pointer-events:none;
+}
+@media(min-width:480px){.nik-toast{right:auto;max-width:320px}}
+.nik-t-ico2{font-size:20px;flex-shrink:0}
+.nik-t-msg{line-height:1.45;color:var(--slate)}
+.nik-t-msg b{color:var(--ink)}
+.nik-t-msg small{display:block;color:var(--red);font-weight:700;font-size:11px;margin-top:2px}
+@keyframes nik-tin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes nik-tout{to{opacity:0;pointer-events:none}}
+
+/* ── RESPONSIVE ────────────────────────────────── */
+@media(max-width:900px){
+  .nik-wrap{grid-template-columns:1fr}
+  .nik-gallery{position:static;height:auto;min-height:0;overflow:hidden}
+  .nik-main-wrap{height:70vw;max-height:420px}
+  .nik-info{padding:24px 16px 50px;border-left:none;border-top:1px solid var(--stone);gap:18px}
+  .nik-trust-grid{grid-template-columns:repeat(2,1fr)}
+  .nik-trust-item:nth-child(2){border-right:none}
+  .nik-trust-item:nth-child(3){border-top:1px solid var(--stone)}
+  .nik-trust-item:nth-child(4){border-top:1px solid var(--stone);border-right:none}
+}
+@media(max-width:480px){
+  .nik-header{padding:0 14px;height:58px}
+  .nik-badge-ltd{font-size:9px;padding:4px 8px}
+  .nik-flash{font-size:9px;gap:4px;padding:8px 10px}
+  .nik-main-wrap{height:75vw;max-height:360px}
+  .nik-thumb{width:52px;height:52px}
+  .nik-size-grid{grid-template-columns:repeat(5,1fr);gap:5px}
+  .nik-sz{font-size:12px;padding:10px 2px}
+  .nik-clean-trust{grid-template-columns:1fr;gap:6px}
+  .nik-trust-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ── STRIPE MODAL ────────────────────────────────── */
+.stripe-overlay{
+  display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);
+  z-index:9999;align-items:center;justify-content:center;padding:16px;
+}
+.stripe-overlay.open{display:flex}
+.stripe-modal{
+  background:#fff;border-radius:16px;width:100%;max-width:420px;
+  padding:32px 28px;position:relative;
+  animation:modal-in .3s cubic-bezier(.4,0,.2,1);
+}
+@keyframes modal-in{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.stripe-modal-close{position:absolute;top:14px;right:16px;font-size:22px;cursor:pointer;color:#999;line-height:1}
+.stripe-modal-close:hover{color:#333}
+.stripe-modal h2{font-family:'Archivo Black',sans-serif;font-size:20px;margin-bottom:4px;color:#0a0a0a}
+.stripe-modal-sub{font-size:13px;color:#6a6a6a;margin-bottom:20px}
+.stripe-modal-price{font-family:'Archivo Black',sans-serif;font-size:28px;color:#0a0a0a;margin-bottom:6px}
+.stripe-modal-was{font-size:13px;color:#b8b5af;text-decoration:line-through;margin-bottom:20px}
+.stripe-modal-size{
+  background:#f5f5f3;border:1px solid #e2e0db;border-radius:10px;
+  padding:12px 16px;font-size:14px;font-weight:700;margin-bottom:20px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.stripe-modal-size span{color:#6a6a6a;font-weight:400}
+.stripe-checkout-btn{
+  width:100%;padding:16px;border-radius:50px;background:#0a0a0a;color:#fff;
+  font-family:'Archivo',sans-serif;font-size:14px;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;cursor:pointer;border:none;
+  transition:background .2s;display:flex;align-items:center;justify-content:center;gap:10px;
+}
+.stripe-checkout-btn:hover{background:#333}
+.stripe-checkout-btn:disabled{opacity:.6;cursor:not-allowed}
+.stripe-checkout-btn.loading::after{
+  content:'';display:inline-block;width:14px;height:14px;
+  border:2px solid rgba(255,255,255,.3);border-top-color:#fff;
+  border-radius:50%;animation:spin .7s linear infinite;
+}
+.stripe-secure{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:14px;font-size:11px;color:#9a9690}
+.stripe-pay-icons{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px}
+.stripe-pay-chip{background:#f0eeec;border:1px solid #e2e0db;border-radius:4px;padding:3px 8px;font-size:9px;font-weight:700;color:#6a6a6a}
+</style>
+</head>
+<body>
+
+<!-- ══ FLASH BANNER ══ -->
+<div class="nik-flash">
+  <div class="nik-flash-dot"></div>
+  BLITZANGEBOT — Endet in&nbsp;<span id="nik-banner-cd">02:47:00</span>&nbsp;· Letzte Paare verfügbar
+  <div class="nik-flash-dot"></div>
+</div>
+
+<!-- ══ HEADER ══ -->
+<header class="nik-header">
+  <a class="nik-logo" href="/" title="Nike Ava X Mesh">
+    <!-- Nike Swoosh SVG -->
+    <svg viewBox="0 0 200 70" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 60L170 10c7-2.8 13-.5 10 6L120 60c-3.5 7-11 9.5-18.5 7.5L20 60z"/>
+    </svg>
+  </a>
+  <div class="nik-hdr-right">
+    <div class="nik-badge-ltd">⚡ Letzte Paare</div>
+  </div>
+</header>
+
+<!-- ══ PRODUCT ══ -->
+<div class="nik-wrap">
+
+  <!-- GALLERY -->
+  <div class="nik-gallery">
+    <div class="nik-main-wrap">
+      <span class="nik-ibadge-ex">🏅 SNKRS Exklusiv</span>
+      <span class="nik-ibadge-lim">Limitierte Edition</span>
+      <img id="nik-main-img"
+        src="https://imgnike-a.akamaihd.net/1920x1920/11407753A1.jpg"
+        alt="Nike Ava X Mesh"
+        width="800" height="800"
+        loading="eager">
+    </div>
+    <div class="nik-thumbs" id="nik-thumb-strip">
+      <!-- filled by JS -->
+    </div>
+  </div>
+
+  <!-- INFO PANEL -->
+  <div class="nik-info">
+
+    <div>
+      <div class="nik-name">Nike Ava X Mesh</div>
+      <div class="nik-cw">Weiß / Photon Dust · Herren und Damen</div>
+      <div class="nik-social-proof">
+        <span class="nik-sp-stars">★★★★★</span>
+        <span class="nik-sp-score">4.9</span>
+        <span class="nik-sp-sep">·</span>
+        <span class="nik-sp-count">3.240 Bewertungen</span>
+        <span class="nik-sp-sep">·</span>
+        <span class="nik-sp-sold">+3.000 verkauft</span>
+      </div>
+    </div>
+
+    <div class="nik-divider"></div>
+
+    <!-- PRICE -->
+    <div class="nik-price-section">
+      <div class="nik-price-row">
+        <span class="nik-p-was">189,99&nbsp;€</span>
+        <span class="nik-p-now">151,99&nbsp;€</span>
+        <span class="nik-p-tag">–20%</span>
+      </div>
+      <div class="nik-p-saving">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        Heute <strong style="margin:0 3px">38,00&nbsp;€</strong> sparen · inkl. MwSt.
+      </div>
+    </div>
+
+    <!-- URGENCY -->
+    <div class="nik-urgency">
+      <div class="nik-urg-head">
+        🔥&ensp;Angebot läuft ab — Jetzt oder nie
+      </div>
+      <div class="nik-urg-body">
+        <div class="nik-timer-row">
+          <div class="nik-t-unit"><span class="nik-t-num" id="nik-th">02</span><span class="nik-t-lbl">Std</span></div>
+          <span class="nik-t-sep">:</span>
+          <div class="nik-t-unit"><span class="nik-t-num" id="nik-tm">47</span><span class="nik-t-lbl">Min</span></div>
+          <span class="nik-t-sep">:</span>
+          <div class="nik-t-unit"><span class="nik-t-num" id="nik-ts">00</span><span class="nik-t-lbl">Sek</span></div>
+        </div>
+        <div class="nik-stock-wrap">
+          <div class="nik-stock-label"><span>Lagerbestand</span><em>Nur 18 Paare übrig!</em></div>
+          <div class="nik-stock-track"><div class="nik-stock-fill"></div></div>
+        </div>
+        <div class="nik-watchers">
+          <div class="nik-live-dots">
+            <div class="nik-live-dot"></div>
+            <div class="nik-live-dot"></div>
+            <div class="nik-live-dot"></div>
+          </div>
+          <span><strong>247 Personen</strong> sehen dieses Produkt gerade</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIZES -->
+    <div class="nik-size-section">
+      <div class="nik-size-head">
+        <span class="nik-size-title">Größe wählen (EU)</span>
+        <span class="nik-size-guide">Größentabelle</span>
+      </div>
+      <div class="nik-size-grid">
+        <button class="nik-sz out">37</button>
+        <button class="nik-sz low" onclick="nikSelectSize(this)">38</button>
+        <button class="nik-sz low" onclick="nikSelectSize(this)">39</button>
+        <button class="nik-sz" onclick="nikSelectSize(this)">40</button>
+        <button class="nik-sz" onclick="nikSelectSize(this)">41</button>
+        <button class="nik-sz" onclick="nikSelectSize(this)">42</button>
+        <button class="nik-sz low" onclick="nikSelectSize(this)">43</button>
+        <button class="nik-sz" onclick="nikSelectSize(this)">44</button>
+        <button class="nik-sz out">45</button>
+        <button class="nik-sz out">46</button>
+      </div>
+      <div class="nik-size-note">⚠ Größen 38, 39 und 43 — Weniger als 2 Paare verfügbar</div>
+    </div>
+
+    <!-- SIZE ERROR -->
+    <div class="nik-size-error" id="nik-size-error">
+      ⚠ Bitte wähle zuerst eine Größe aus!
+    </div>
+
+    <!-- CTA -->
+    <div class="nik-cta-stack">
+      <button class="nik-btn-primary" id="nik-buy-btn" onclick="nikOpenStripe()">
+        🛒&ensp;In den Warenkorb — Jetzt kaufen
+      </button>
+    </div>
+
+    <!-- CART TIMER -->
+    <div id="nik-cart-timer-box" class="nik-cart-timer">
+      <span class="nik-cart-timer-label">Warenkorb reserviert</span>
+      <span class="nik-cart-timer-time">
+        <span id="nik-t-h">00</span>:<span id="nik-t-m">47</span>:<span id="nik-t-s">13</span>
+      </span>
+      <span class="nik-cart-timer-note">Dein Paar bleibt nur kurz für dich reserviert.</span>
+    </div>
+
+    <div class="nik-microcopy"><b>Sicher bezahlen</b> mit Stripe — Visa, Mastercard, PayPal.</div>
+
+    <div class="nik-payment-mini">
+      <span class="nik-pay-mini visa">VISA</span>
+      <span class="nik-pay-mini mastercard">MC</span>
+      <span class="nik-pay-mini" style="color:#635bff;font-weight:900">Stripe</span>
+      <span class="nik-pay-mini paypal">PayPal</span>
+      <span class="nik-pay-mini klarna">Klarna</span>
+    </div>
+
+    <div class="nik-clean-trust">
+      <div class="nik-clean-trust-item"><span>📦</span> Kostenloser Versand</div>
+      <div class="nik-clean-trust-item"><span>🔒</span> SSL-Sicher</div>
+      <div class="nik-clean-trust-item"><span>↩</span> 30 Tage Rückgabe</div>
+    </div>
+
+    <div class="nik-legit-row">
+      <span class="nik-legit-pill">PayPal Käuferschutz</span>
+      <span class="nik-legit-pill">SSL geschützt</span>
+      <span class="nik-legit-pill">Klarna verfügbar</span>
+    </div>
+
+    <div class="nik-divider"></div>
+
+    <div class="nik-trust-grid">
+      <div class="nik-trust-item"><div class="nik-t-ico">🚀</div>Express-Lieferung 2–4 Tage</div>
+      <div class="nik-trust-item"><div class="nik-t-ico">↩</div>30 Tage Rückgaberecht</div>
+      <div class="nik-trust-item"><div class="nik-t-ico">🔒</div>SSL-verschlüsselt</div>
+      <div class="nik-trust-item"><div class="nik-t-ico">✅</div>Nike Original garantiert</div>
+    </div>
+
+    <div class="nik-desc-section">
+      <div class="nik-desc-h">Über dieses Produkt</div>
+      <div class="nik-desc-b">
+        Das moderne Design, das Sie wollen — mit dem Komfort, den Sie für jeden Schritt brauchen.
+        Der ultraleichte Ava X beeindruckt mit cleaner und eleganter Gestaltung. Die weiche Dämpfung
+        und der vollständige Halt sorgen für Komfort und Stabilität — wo auch immer Sie hingehen.
+      </div>
+      <div class="nik-legit-row">
+        <span class="nik-legit-pill">Ultraleicht</span>
+        <span class="nik-legit-pill">Atmungsaktiv</span>
+        <span class="nik-legit-pill">Alltag &amp; Freizeit</span>
+      </div>
+    </div>
+
+  </div><!-- /nik-info -->
+</div><!-- /nik-wrap -->
+
+<!-- ══ FOOTER ══ -->
+<footer class="nik-footer">
+  <div class="nik-f-logo">
+    <svg viewBox="0 0 80 30" xmlns="http://www.w3.org/2000/svg"><path d="M8 24L68 4c3-1.2 5.2-.2 4 2.5L48 24c-1.5 3-4.5 4-7.5 3L8 24z"/></svg>
+  </div>
+  <div class="nik-f-text">© 2025 Nike, Inc. Alle Rechte vorbehalten</div>
+  <div class="nik-f-links">
+    <a href="#">Datenschutz</a>
+    <a href="#">Nutzungsbedingungen</a>
+    <a href="#">Kontakt</a>
+  </div>
+</footer>
+
+<!-- ══ TOAST ══ -->
+<div class="nik-toast" id="nik-toast">
+  <span class="nik-t-ico2">👟</span>
+  <div class="nik-t-msg" id="nik-toast-msg">
+    <b>Jemand aus Berlin</b> hat gerade diesen Sneaker in Größe 42 gekauft!
+    <small>⚡ Nur noch wenige Paare verfügbar!</small>
+  </div>
+</div>
+
+<!-- ══ STRIPE CHECKOUT MODAL ══ -->
+<div class="stripe-overlay" id="stripe-overlay" onclick="nikCloseStripe(event)">
+  <div class="stripe-modal">
+    <span class="stripe-modal-close" onclick="nikCloseStripeBtn()">&times;</span>
+    <h2>Bestellung abschließen</h2>
+    <div class="stripe-modal-sub">Nike Ava X Mesh — Limitierte Edition</div>
+    <div class="stripe-modal-price">151,99&nbsp;€</div>
+    <div class="stripe-modal-was">Normalpreis: 189,99&nbsp;€ <strong style="color:#1a7a1a">Sie sparen 38,00&nbsp;€</strong></div>
+    <div class="stripe-modal-size">
+      <span>Gewählte Größe</span>
+      <strong id="modal-size-display">—</strong>
+    </div>
+    <button class="stripe-checkout-btn" id="stripe-checkout-btn" onclick="nikStartCheckout()">
+      🔒&ensp;Sicher mit Stripe bezahlen
+    </button>
+    <div class="stripe-secure">🔒 256-bit SSL · Stripe Secure Checkout</div>
+    <div class="stripe-pay-icons">
+      <span class="stripe-pay-chip">VISA</span>
+      <span class="stripe-pay-chip">Mastercard</span>
+      <span class="stripe-pay-chip">PayPal</span>
+      <span class="stripe-pay-chip">AMEX</span>
+      <span class="stripe-pay-chip">Klarna</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SCRIPTS ══ -->
+<script>
+(function(){
+  'use strict';
+
+  // ── PRODUTO / CONFIG ─────────────────────────────
+  const PRODUCT_NAME = 'Nike Ava X Mesh';
+  const PRICE_NOW    = 151.99;
+  const PRICE_WAS    = 189.99;
+  const IMAGES = [
+    'https://imgnike-a.akamaihd.net/1920x1920/11407753A1.jpg',
+    'https://imgnike-a.akamaihd.net/1920x1920/11407753A2.jpg',
+    'https://imgnike-a.akamaihd.net/1920x1920/11407753A3.jpg',
+  ];
+
+  // ── THUMBNAILS ────────────────────────────────────
+  const strip = document.getElementById('nik-thumb-strip');
+  const mainImg = document.getElementById('nik-main-img');
+  IMAGES.forEach((src, i) => {
+    const div = document.createElement('div');
+    div.className = 'nik-thumb' + (i === 0 ? ' active' : '');
+    const img = document.createElement('img');
+    img.src = src; img.alt = PRODUCT_NAME + ' ' + (i+1);
+    img.loading = 'lazy';
+    div.appendChild(img);
+    div.addEventListener('click', () => {
+      document.querySelectorAll('.nik-thumb').forEach(t => t.classList.remove('active'));
+      div.classList.add('active');
+      mainImg.src = src;
+    });
+    strip.appendChild(div);
+  });
+
+  // ── SIZE SELECTION ────────────────────────────────
+  let selectedSize = null;
+  window.nikSelectSize = function(btn) {
+    document.querySelectorAll('.nik-sz:not(.out)').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    selectedSize = btn.textContent.trim();
+    document.getElementById('nik-size-error').classList.remove('show');
+    document.getElementById('modal-size-display').textContent = 'EU ' + selectedSize;
+  };
+
+  // ── COUNTDOWN BANNER ─────────────────────────────
+  const totalBannerSecs = 2*3600 + 47*60;
+  let bannerSecs = totalBannerSecs;
+  function updateBanner(){
+    const h = Math.floor(bannerSecs/3600);
+    const m = Math.floor((bannerSecs%3600)/60);
+    const s = bannerSecs%60;
+    document.getElementById('nik-banner-cd').textContent =
+      String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+    if(bannerSecs > 0) bannerSecs--;
+  }
+  updateBanner();
+  setInterval(updateBanner, 1000);
+
+  // ── URGENCY TIMER ─────────────────────────────────
+  let urgSecs = 2*3600 + 47*60;
+  function updateUrgency(){
+    const h = Math.floor(urgSecs/3600);
+    const m = Math.floor((urgSecs%3600)/60);
+    const s = urgSecs%60;
+    document.getElementById('nik-th').textContent = String(h).padStart(2,'0');
+    document.getElementById('nik-tm').textContent = String(m).padStart(2,'0');
+    document.getElementById('nik-ts').textContent = String(s).padStart(2,'0');
+    if(urgSecs > 0) urgSecs--;
+  }
+  updateUrgency();
+  setInterval(updateUrgency, 1000);
+
+  // ── SOCIAL PROOF TOAST ────────────────────────────
+  const CITIES = ['Berlin','München','Hamburg','Köln','Frankfurt','Stuttgart','Düsseldorf','Leipzig'];
+  const SIZES  = [38,39,40,41,42,43,44];
+  function showToast(){
+    const city = CITIES[Math.floor(Math.random()*CITIES.length)];
+    const sz   = SIZES[Math.floor(Math.random()*SIZES.length)];
+    const t    = document.getElementById('nik-toast');
+    const msg  = document.getElementById('nik-toast-msg');
+    if(!t||!msg) return;
+    msg.innerHTML = `<b>Jemand aus ${city}</b> hat gerade diesen Sneaker in Größe ${sz} gekauft!<small>⚡ Nur noch wenige Paare verfügbar!</small>`;
+    t.style.animation='none'; t.offsetHeight;
+    t.style.animation='nik-tin .4s ease,nik-tout .4s ease 5s forwards';
+  }
+  setTimeout(()=>{ showToast(); setInterval(showToast,13000); },6000);
+
+  // ── CART TIMER ────────────────────────────────────
+  let cartSecs = 0, cartInterval = null;
+  window.nikStartCartTimer = function(){
+    const box = document.getElementById('nik-cart-timer-box');
+    box.style.display='block';
+    cartSecs = 47*60+13;
+    if(cartInterval) clearInterval(cartInterval);
+    cartInterval = setInterval(()=>{
+      if(cartSecs <= 0){ clearInterval(cartInterval); return; }
+      const m = Math.floor(cartSecs/60);
+      const s = cartSecs%60;
+      document.getElementById('nik-t-h').textContent='00';
+      document.getElementById('nik-t-m').textContent=String(m).padStart(2,'0');
+      document.getElementById('nik-t-s').textContent=String(s).padStart(2,'0');
+      cartSecs--;
+    },1000);
+  };
+
+  // ── STRIPE MODAL ─────────────────────────────────
+  window.nikOpenStripe = function(){
+    if(!selectedSize){
+      const err = document.getElementById('nik-size-error');
+      err.classList.add('show');
+      err.scrollIntoView({behavior:'smooth',block:'center'});
+      return;
+    }
+    document.getElementById('modal-size-display').textContent = 'EU ' + selectedSize;
+    document.getElementById('stripe-overlay').classList.add('open');
+    document.body.style.overflow='hidden';
+  };
+
+  window.nikCloseStripe = function(e){
+    if(e.target === document.getElementById('stripe-overlay')) nikCloseStripeBtn();
+  };
+  window.nikCloseStripeBtn = function(){
+    document.getElementById('stripe-overlay').classList.remove('open');
+    document.body.style.overflow='';
+  };
+
+  // ── STRIPE CHECKOUT ───────────────────────────────
+  window.nikStartCheckout = async function(){
+    const btn = document.getElementById('stripe-checkout-btn');
+    if(!selectedSize) return;
+    btn.disabled = true;
+    btn.classList.add('loading');
+    btn.textContent = 'Weiterleitung…';
+
+    try {
+      const res = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ size: selectedSize, quantity: 1 })
+      });
+
+      if(!res.ok){
+        const err = await res.json();
+        throw new Error(err.error || 'Unbekannter Fehler');
+      }
+
+      const data = await res.json();
+      if(data.url){
+        nikStartCartTimer();
+        window.location.href = data.url; // Redireciona para Stripe
+      } else {
+        throw new Error('Keine URL von Stripe erhalten');
+      }
+    } catch(e){
+      alert('Fehler beim Öffnen von Stripe: ' + e.message);
+      btn.disabled = false;
+      btn.classList.remove('loading');
+      btn.innerHTML = '🔒&ensp;Sicher mit Stripe bezahlen';
+    }
+  };
+
+  // ── INTERSECTION OBSERVER ─────────────────────────
+  const revEls = document.querySelectorAll('.pm-reveal,.pm-reveal-left,.pm-reveal-right');
+  if(revEls.length && 'IntersectionObserver' in window){
+    const obs = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('pm-visible'); obs.unobserve(e.target); }});
+    },{threshold:0.1});
+    revEls.forEach(el=>obs.observe(el));
+  } else {
+    revEls.forEach(el=>el.classList.add('pm-visible'));
+  }
+})();
+</script>
+</body>
+</html>
